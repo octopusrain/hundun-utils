@@ -1,6 +1,6 @@
 {
   "name": "hundun-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "混沌工具库",
   "main": "lib/index.js",
   "scripts": {
@@ -33,7 +33,6 @@
     "rollup-plugin-terser": "^6.1.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.7",
-    "axios": "^0.19.2"
+    "@babel/polyfill": "^7.8.7"
   }
 }

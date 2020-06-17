@@ -22,6 +22,6 @@ const buildFileOptions = {
     //   minify: true,
     // }),
   ],
-  external: 'axios',
+  external: ['axios', 'wx'],
 }
 export default buildFileOptions

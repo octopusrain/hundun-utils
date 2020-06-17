@@ -90,6 +90,6 @@ export const sentryInit = (sentry_host = process.env.SENTRY_HOST) => {
   })
 }
 export default {
-  sa_init,
-  sentry_init,
+  saInit,
+  sentryInit,
 }
