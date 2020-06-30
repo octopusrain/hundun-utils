@@ -1,5 +1,4 @@
 import resolve from 'rollup-plugin-node-resolve' // 处理第三方引入的模块
-
 import babel from 'rollup-plugin-babel' // .js文件编译为es2015
 import commonjs from 'rollup-plugin-commonjs' // 转化为commonjs规范
 import { terser } from 'rollup-plugin-terser' // 压缩

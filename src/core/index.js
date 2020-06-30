@@ -9,10 +9,10 @@ import {
   checkVersion,
   getBase64Url,
 } from '../utils'
-// import shareInit from './share_init'
+import shareInit from './share_init'
 export {
   getUserBaseInfo,
-  // shareInit,
+  shareInit,
   hdLog,
   direct,
   appApi,
