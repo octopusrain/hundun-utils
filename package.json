@@ -23,9 +23,10 @@
   },
   "homepage": "https://github.com/octopusrain/hundun-utils.git#readme",
   "devDependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.10.4",
     "@babel/plugin-transform-runtime": "^7.10.1",
-    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-esbuild": "^2.1.0",
