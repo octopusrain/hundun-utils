@@ -1,6 +1,6 @@
 {
   "name": "hundun-utils",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "混沌工具库",
   "main": "lib/index.js",
   "scripts": {

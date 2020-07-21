@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { checkEnv, getBaseEnvironment, query, sendSa } from '../utils'
+import { checkEnv, getBaseEnvironment, query, sendSa } from '../utils/'
 const app_info = checkEnv()
 const wxpub_id = app_info.wxpub_id
 const environment = getBaseEnvironment()
@@ -116,7 +116,7 @@ const thirlLogin = (userinfo, channel) => {
   return new Promise((resolve, reject) => {
     return axios
       .post(
-        process.env.USER_HOST + '/thirdparty_login',
+        process.env.VUE_APP_USER_HOST + '/thirdparty_login',
         Object.assign(userinfo, {
           head_img: userinfo.headimgurl,
           channel,
@@ -131,7 +131,6 @@ const thirlLogin = (userinfo, channel) => {
         })
       )
       .then((res) => {
-        sendSa(res.data.data)
         resolve(res.data.data)
       })
       .catch((err) => {
@@ -145,7 +144,6 @@ const getUserInfo = (uid, user_host) => {
     return axios
       .get(`${user_host}/get_user_info?uid=${uid}`)
       .then((res) => {
-        sendSa(res.data.data)
         resolve(res.data.data)
       })
       .catch((err) => {
@@ -157,8 +155,8 @@ const getUserInfo = (uid, user_host) => {
 export default function getUserBaseInfo(
   user_id,
   channel,
-  web_host = process.env.WEB_HOST,
-  user_host = process.env.USER_HOST
+  web_host = process.env.VUE_APP_WEB_HOST,
+  user_host = process.env.VUE_APP_USER_HOST
 ) {
   return new Promise(async (resolve, reject) => {
     try {
@@ -170,6 +168,7 @@ export default function getUserBaseInfo(
           user_info = await getUserInfo(user_id, user_host)
         }
       }
+      sendSa(user_info)
       resolve(user_info)
     } catch (error) {
       Raven.captureException(error)

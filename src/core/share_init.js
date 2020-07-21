@@ -27,11 +27,15 @@ export default function shareInit(OPTION) {
   if (OPTION.jsApiList) jsApiList = jsApiList.concat(OPTION.jsApiList)
   return new Promise((resolve, reject) => {
     return axios
-      .post(process.env.WEB_HOST + '/base/wx_config', {
-        web_url: encodeURIComponent(window.location.href),
-        wxpub_id,
-      })
-      .then(({ data: result }) => {
+      .post(
+        (process.env.VUE_APP_WEB_HOST || process.env.WEB_HOST) +
+          '/base/wx_config',
+        {
+          web_url: encodeURIComponent(window.location.href),
+          wxpub_id,
+        }
+      )
+      .then((result) => {
         wx.config({
           debug: false,
           appId: result.data.appid,
